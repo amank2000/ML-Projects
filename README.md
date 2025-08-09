@@ -22,3 +22,11 @@ pre-commit install
 Commits directly to the `main` branch are blocked by the `no-commit-to-branch` hook.
 It is recommended to enable GitHub branch protection so that changes to `main` can
 only be merged via pull requests after the CI pipeline succeeds.
+
+### Merge strategy and cleanup
+
+Configure the repository to allow only **Squash and merge** so that pull requests
+are reduced to a single commit on `main`. Enable **Automatically delete head
+branches** in repository settings to remove topic branches after a pull request
+is merged. A companion workflow, `Delete merged branches`, also cleans up merged
+branches for repositories where automatic branch deletion is not enabled.
